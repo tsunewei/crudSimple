@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>queryPage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+	<table>
+		<tr>
+			<td>username</td>
+			<td>passwd</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<form role="form" name="loginForm" id="loginForm" method="post"
+							enctype="multipart/form-data" th:action="@{/queryAction}">
+			<td><input type="text" name="username"/></td>
+			<td><input type="password" name="passwd"/></td>
+			<!-- <td><button onclick="checkLogin()">search</button></td>-->
+			<td><button onclick="searchCheck(loginForm)">search</button></td>
+			<td><a th:href="@{'/insertPage'}" th:text="insert"></td>
+		</tr>
+		</form>
+	</table>
+</body>
+
+<script type="text/javascript">
+$(function(){
+	checkLogin = function(){
+
+		$("#loginForm").submit();
+		
+	}
+});
+
+function searchCheck(form){
+	alert(form.username.value);
+	if(username == null){
+		alert("user null");
+	}
+}
+</script>
+</html>

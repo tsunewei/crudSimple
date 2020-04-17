@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>queryPage</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+	<table border="2px">
+		<tr>
+			<td>ID</td>
+			<td>username</td>
+			<td>passwd</td>
+			<td>systime</td>
+			<td></td>
+		</tr>
+		<form role="form" method="post" enctype="multipart/form-data"
+			th:action="@{/updateAction}">
+		<tr th:each="dataForm:${dataForm}">
+			<input type="hidden" th:value="${dataForm.id}" name="id">
+			<td th:text="${dataForm.id}"></td>
+			<td><input type="text" th:value="${dataForm.username}"
+				name="username"></td>
+			<td><input type="text" th:value="${dataForm.passwd}"></td>
+			<td><input type="text" th:value="${dataForm.systime}"></td>
+			<td><input type="submit" value="submit"></td>
+		</tr>
+		</form>
+	</table>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>queryAction</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+</head>
+<body>
+	<table border="2px">
+		<tr>
+			<td>ID</td>
+			<td>username</td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr th:each="dataForm:${dataForm}">
+			<br />
+			<td th:text="${dataForm.id}"></td>
+			<td th:text="${dataForm.username}"></td>
+			<td><a th:href="@{'/updatePage?id='+${dataForm.id}}" th:text="update"></a></td>
+			<td><a th:href="@{'/deleteAction?id='+${dataForm.id}}" th:text="delete"></a></td>
+		</tr>
+	</table>
+</body>
+</html>
