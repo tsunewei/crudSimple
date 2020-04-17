@@ -1,0 +1,12 @@
+#git add <filename>
+git add
+git commit -m ""
+git push -u origin master
+
+#git get file
+git pull
+
+#get rm file
+git rm <filename>
+git commit -m ""
+git push -u origin master
