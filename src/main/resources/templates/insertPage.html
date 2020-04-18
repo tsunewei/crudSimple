@@ -2,6 +2,9 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <title>queryPage</title>
+
+<script type="text/javascript" th:src="@{/js/myScript.js}"></script>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 </head>
@@ -12,12 +15,14 @@
 			<td>passwd</td>
 			<td></td>
 		</tr>
-		<form role="form" method="post" enctype="multipart/form-data"
+		<form role="form" name="myform" method="post" enctype="multipart/form-data"
 			th:action="@{/insertAction}">
 			<tr>
 				<td><input type="text" name="username"></td>
 				<td><input type="text" name="passwd"></td>
 				<td><input type="submit" value="submit"></td>
+				<td><button type="button" th:onclick="showAlert()">Show Alert</button></td>
+				<td><button type="button" th:onclick="inoutCheck(myform)">inputCheck</button></td>
 			</tr>
 		</form>
 	</table>
